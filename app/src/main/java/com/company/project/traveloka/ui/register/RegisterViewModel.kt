@@ -1,8 +1,8 @@
-package com.company.project.traveloka.ui.login
+package com.company.project.traveloka.ui.register
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class LoginViewModel @Inject constructor() : ViewModel()
+class RegisterViewModel @Inject constructor() : ViewModel()
