@@ -28,6 +28,13 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding?.signInButton?.setOnClickListener{
+            NavHostFragment
+                .findNavController(this)
+                .navigate(R.id.action_loginFragment_to_homeActivity)
+        }
+
         binding?.registerText?.setOnClickListener {
             NavHostFragment
                 .findNavController(this)

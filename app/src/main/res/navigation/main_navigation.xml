@@ -14,6 +14,9 @@
        <action
            android:id="@+id/action_loginFragment_to_registerFragment"
            app:destination="@id/registerFragment" />
+       <action
+           android:id="@+id/action_loginFragment_to_homeActivity"
+           app:destination="@id/homeActivity" />
    </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -25,5 +28,10 @@
         android:name="com.company.project.traveloka.ui.profile.ProfileActivity"
         android:label="activity_profile"
         tools:layout="@layout/activity_profile" />
+    <activity
+        android:id="@+id/homeActivity"
+        android:name="com.company.project.traveloka.ui.home.HomeActivity"
+        android:label="activity_home"
+        tools:layout="@layout/activity_home" />
 
 </navigation>
