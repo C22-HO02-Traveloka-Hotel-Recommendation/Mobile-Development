@@ -1,4 +1,4 @@
-package com.company.project.traveloka.ui.home.detail
+package com.company.project.traveloka.ui.home.hotel.detail
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

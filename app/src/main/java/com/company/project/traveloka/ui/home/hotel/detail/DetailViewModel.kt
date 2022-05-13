@@ -1,4 +1,4 @@
-package com.company.project.traveloka.ui.home.detail
+package com.company.project.traveloka.ui.home.hotel.detail
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
