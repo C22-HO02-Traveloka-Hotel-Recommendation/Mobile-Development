@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="login">Login with Google</string>
+    <string name="register">Register with Google</string>
+    <string name="signInText">Don\'t have account?</string>
+    <string name="registerText">Register</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">Search</string>
+    <string name="date">Date</string>
+    <string name="filter">Filter</string>
+    <string name="enterHotelLocation">Enter hotel location or name</string>
+    <string name="imagePreview">Image Preview</string>
+    <string name="home">Home</string>
+    <string name="history">History</string>
+    <string name="profile">Profile</string>
 </resources>
