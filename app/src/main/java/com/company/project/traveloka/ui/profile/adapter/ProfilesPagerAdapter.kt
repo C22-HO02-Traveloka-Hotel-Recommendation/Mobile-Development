@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.company.project.traveloka.ui.profile.fragment.PostFragment
 
-class ProfilesPagerAdapter(activity: AppCompatActivity): FragmentStateAdapter(activity)  {
+class ProfilesPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity) {
 
     override fun getItemCount(): Int = 3
 

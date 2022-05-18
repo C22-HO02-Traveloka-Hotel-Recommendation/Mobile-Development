@@ -17,5 +17,4 @@ object DataStoreModule {
     @Provides
     fun provideDataStoreManager(@ApplicationContext context: Context): DataStoreManager =
         DataStoreManager(context)
-
 }
