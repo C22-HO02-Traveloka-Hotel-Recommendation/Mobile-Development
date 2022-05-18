@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
+import com.company.project.traveloka.R
 import com.company.project.traveloka.databinding.FragmentHomeBinding
 import com.google.android.material.datepicker.MaterialDatePicker
 import dagger.hilt.android.AndroidEntryPoint
@@ -59,6 +61,12 @@ class HomeFragment : Fragment() {
             datePicker.addOnCancelListener {
                 Toast.makeText(activity, "Date Picker Cancelled", Toast.LENGTH_LONG).show()
             }
+        }
+
+        binding.filledButton.setOnClickListener {
+            NavHostFragment
+                .findNavController(this)
+                .navigate(R.id.action_navigation_home_to_hotelActivity)
         }
     }
 

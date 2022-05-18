@@ -10,6 +10,9 @@
         android:name="com.company.project.traveloka.ui.home.HomeFragment"
         android:label="@string/home"
         tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_hotelActivity"
+            app:destination="@id/hotelActivity" />
     </fragment>
 
     <fragment
@@ -23,5 +26,10 @@
         android:name="com.company.project.traveloka.ui.profile.ProfileFragment"
         android:label="@string/profile"
         tools:layout="@layout/fragment_profile" />
+    <activity
+        android:id="@+id/hotelActivity"
+        android:name="com.company.project.traveloka.ui.home.hotel.HotelActivity"
+        android:label="activity_hotel"
+        tools:layout="@layout/activity_hotel" />
 
 </navigation>
