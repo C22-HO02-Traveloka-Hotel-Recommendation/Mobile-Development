@@ -1,4 +1,4 @@
-package com.company.project.traveloka.data.model.user
+package com.company.project.traveloka.data.remote.model.entity
 
 import android.os.Parcelable
 import com.squareup.moshi.Json
@@ -7,7 +7,9 @@ import kotlinx.parcelize.Parcelize
 
 @JsonClass(generateAdapter = true)
 @Parcelize
-data class User(
-    @Json(name = "id")
-    val id: Int = 0
+data class BaseResponse(
+    @Json(name = "status")
+    val status: String?,
+    @Json(name = "message")
+    val message: String?
 ) : Parcelable

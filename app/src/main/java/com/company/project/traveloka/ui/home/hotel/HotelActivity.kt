@@ -3,7 +3,7 @@ package com.company.project.traveloka.ui.home.hotel
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.company.project.traveloka.data.model.hotel.Hotel
+import com.company.project.traveloka.data.local.model.entitiy.hotel.Hotel
 import com.company.project.traveloka.databinding.ActivityHotelBinding
 import com.company.project.traveloka.ui.home.hotel.adapter.ListHotelAdapter
 

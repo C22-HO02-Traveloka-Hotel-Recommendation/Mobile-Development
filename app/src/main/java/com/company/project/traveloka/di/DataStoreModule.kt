@@ -1,7 +1,7 @@
 package com.company.project.traveloka.di
 
 import android.content.Context
-import com.company.project.traveloka.data.datastore.DataStoreManager
+import com.company.project.traveloka.data.local.datastore.DataStoreManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

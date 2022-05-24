@@ -1,4 +1,4 @@
-package com.company.project.traveloka.data.datastore
+package com.company.project.traveloka.data.local.datastore
 
 import android.content.Context
 import androidx.datastore.preferences.preferencesDataStore

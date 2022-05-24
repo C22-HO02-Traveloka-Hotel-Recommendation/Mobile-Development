@@ -2,14 +2,11 @@ package com.company.project.traveloka.ui.home.hotel.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.company.project.traveloka.R
-import com.company.project.traveloka.data.model.hotel.Hotel
+import com.company.project.traveloka.data.local.model.entitiy.hotel.Hotel
 import com.company.project.traveloka.databinding.ItemRowHotelBinding
-import java.util.*
 
 class ListHotelAdapter :
     RecyclerView.Adapter<ListHotelAdapter.HotelViewHolder>() {
