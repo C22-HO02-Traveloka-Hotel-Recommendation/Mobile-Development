@@ -43,15 +43,15 @@ class ProfileFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.share -> {
-                Toast.makeText(activity, "Fitur belum dibuat", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Fitur belum dibuat", Toast.LENGTH_SHORT).show()
                 true
             }
             R.id.help -> {
-                Toast.makeText(activity, "Fitur belum dibuat", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Fitur belum dibuat", Toast.LENGTH_SHORT).show()
                 true
             }
             R.id.home_menu -> {
-                Toast.makeText(activity, "Fitur belum dibuat", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Fitur belum dibuat", Toast.LENGTH_SHORT).show()
                 true
             }
             else -> true
