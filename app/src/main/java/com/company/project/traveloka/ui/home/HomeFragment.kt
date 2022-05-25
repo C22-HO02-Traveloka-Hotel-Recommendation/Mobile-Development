@@ -49,17 +49,17 @@ class HomeFragment : Fragment() {
                 val dateFirst = dateFormatter.format(Date(it.first))
                 val dateSecond = dateFormatter.format(Date(it.second))
                 binding.datePickerText.hint = "$dateFirst - $dateSecond"
-                Toast.makeText(activity, "$dateFirst $dateSecond is selected", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "$dateFirst $dateSecond is selected", Toast.LENGTH_LONG).show()
             }
 
             // Setting up the event for when cancelled is clicked
             datePicker.addOnNegativeButtonClickListener {
-                Toast.makeText(activity, "${datePicker.headerText} is cancelled", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "${datePicker.headerText} is cancelled", Toast.LENGTH_LONG).show()
             }
 
             // Setting up the event for when back button is pressed
             datePicker.addOnCancelListener {
-                Toast.makeText(activity, "Date Picker Cancelled", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Date Picker Cancelled", Toast.LENGTH_LONG).show()
             }
         }
 
