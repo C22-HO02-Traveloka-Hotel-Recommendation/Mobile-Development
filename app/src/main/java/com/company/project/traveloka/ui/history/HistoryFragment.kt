@@ -8,11 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.company.project.traveloka.data.model.history.History
-import com.company.project.traveloka.data.model.hotel.Hotel
+import com.company.project.traveloka.data.local.model.entitiy.history.History
 import com.company.project.traveloka.databinding.FragmentHistoryBinding
 import com.company.project.traveloka.ui.history.adapter.ListHistoryAdapter
-import com.company.project.traveloka.ui.home.hotel.adapter.ListHotelAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

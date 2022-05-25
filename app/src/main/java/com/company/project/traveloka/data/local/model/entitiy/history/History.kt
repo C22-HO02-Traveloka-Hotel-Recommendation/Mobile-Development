@@ -1,4 +1,4 @@
-package com.company.project.traveloka.data.model.history
+package com.company.project.traveloka.data.local.model.entitiy.history
 
 import android.os.Parcelable
 import com.squareup.moshi.JsonClass
