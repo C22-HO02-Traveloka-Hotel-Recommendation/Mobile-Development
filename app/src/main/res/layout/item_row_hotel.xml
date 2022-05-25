@@ -48,7 +48,7 @@
             tools:text="Hotel Indonesia" />
 
         <TextView
-            android:id="@+id/tvDate"
+            android:id="@+id/tvStar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -63,7 +63,7 @@
             tools:text="*****" />
 
         <TextView
-            android:id="@+id/tvDescription"
+            android:id="@+id/tvLocation"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -75,12 +75,12 @@
             android:textStyle="bold"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toEndOf="@+id/img_item_photo"
-            card_view:layout_constraintTop_toBottomOf="@+id/tvDate"
+            card_view:layout_constraintTop_toBottomOf="@+id/tvStar"
             tools:text="Jakarta"
             card_view:drawableStartCompat="@drawable/ic_location_on_black" />
 
         <TextView
-            android:id="@+id/tvDescription2"
+            android:id="@+id/tvRating"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -92,11 +92,11 @@
             android:textStyle="bold"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toEndOf="@+id/img_item_photo"
-            card_view:layout_constraintTop_toBottomOf="@+id/tvDescription"
+            card_view:layout_constraintTop_toBottomOf="@+id/tvLocation"
             tools:text="4.8" />
 
         <TextView
-            android:id="@+id/tvDescription3"
+            android:id="@+id/tvPrice"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -111,7 +111,7 @@
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintHorizontal_bias="0.0"
             card_view:layout_constraintStart_toEndOf="@+id/img_item_photo"
-            card_view:layout_constraintTop_toBottomOf="@+id/tvDescription2"
+            card_view:layout_constraintTop_toBottomOf="@+id/tvRating"
             card_view:layout_constraintVertical_bias="0.0"
             tools:text="Rp.123.123/night" />
 

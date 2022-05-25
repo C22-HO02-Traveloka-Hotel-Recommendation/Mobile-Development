@@ -1,4 +1,4 @@
-package com.company.project.traveloka.ui.register
+package com.company.project.traveloka.ui.profile.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import com.company.project.traveloka.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class RegisterFragment : Fragment() {
+class PostFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -17,6 +17,6 @@ class RegisterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register, container, false)
+        return inflater.inflate(R.layout.fragment_post, container, false)
     }
 }

@@ -7,6 +7,4 @@ import javax.inject.Inject
 
 val Context.loginDataStore by preferencesDataStore(LOGIN_DATASTORE)
 
-class DataStoreManager @Inject constructor(context: Context) {
-
-}
+class DataStoreManager @Inject constructor(context: Context)
