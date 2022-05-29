@@ -26,4 +26,11 @@
     <string name="description">Description</string>
     <string name="description_dummy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas arcu nisl, mollis a pharetra id, maximus eu mi. Ut diam sem, maximus quis lacus et, dignissim elementum tortor. Proin laoreet id mi a facilisis. Aenean faucibus auctor metus, a vulputate lorem mollis id. In vitae nibh nibh. Nullam viverra felis quis purus placerat, eu aliquam purus maximus. Ut sit amet pretium odio, id ullamcorper risus. Nullam dapibus ante ornare, hendrerit nisl ut, ornare tellus. Vivamus consequat tellus in fringilla condimentum. Donec condimentum porta neque non sollicitudin. Praesent condimentum egestas odio quis mollis. In vitae urna lacus. Aliquam metus arcu, volutpat porttitor elementum eleifend, mattis ac dolor. Vivamus vitae dictum massa. Fusce tincidunt felis in elementum lacinia. Suspendisse varius pretium nunc. Praesent varius blandit condimentum. Etiam ut erat risus. Sed turpis dolor, dignissim non libero et, aliquet maximus tortor. Mauris eu nibh quis sem luctus hendrerit eu in nisl. Suspendisse sollicitudin sapien ac augue tincidunt pharetra. Duis in lobortis tellus. Integer elementum dolor justo, vel sagittis metus venenatis ac.</string>
     <string name="description_see_details">See Details</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="or_sign_in_using">Or sign in using</string>
+    <string name="google_signin">Google</string>
+    <string name="facebook_signin">Facebook</string>
 </resources>
