@@ -33,4 +33,10 @@
     <string name="or_sign_in_using">Or sign in using</string>
     <string name="google_signin">Google</string>
     <string name="facebook_signin">Facebook</string>
+    <string name="input_name_hint">Name</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="button_register">Register</string>
+    <string name="or_register_using">Or register using</string>
+    <string name="sign_in_intent">Have account?</string>
+    <string name="sign_in_here">sign in here</string>
 </resources>
