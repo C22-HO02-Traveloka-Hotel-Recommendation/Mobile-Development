@@ -50,6 +50,20 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    private fun initGSO() {
+
+        // Configure Google Sign In
+        val gso = GoogleSignInOptions
+            .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+        googleSignInClient = GoogleSignIn.getClient(this, gso)
+
+        // Initialize Firebase Auth
+        auth = Firebase.auth
+    }
+
     private fun signIn() {
         val signInIntent = googleSignInClient.signInIntent
         resultLauncher.launch(signInIntent)
@@ -100,20 +114,6 @@ class LoginActivity : AppCompatActivity() {
         //check if user is signed
         val currentUser = auth.currentUser
         updateUI(currentUser)
-    }
-
-    private fun initGSO() {
-
-        // Configure Google Sign In
-        val gso = GoogleSignInOptions
-            .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail()
-            .build()
-        googleSignInClient = GoogleSignIn.getClient(this, gso)
-
-        // Initialize Firebase Auth
-        auth = Firebase.auth
     }
 
     companion object {

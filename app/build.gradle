@@ -112,3 +112,5 @@ dependencies {
     implementation "androidx.datastore:datastore-preferences:$datastore_version"
 
 }
+
+apply plugin: 'com.google.gms.google-services'
