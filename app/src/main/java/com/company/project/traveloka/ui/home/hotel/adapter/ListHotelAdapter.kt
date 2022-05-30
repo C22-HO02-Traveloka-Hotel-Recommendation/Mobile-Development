@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.company.project.traveloka.R
-import com.company.project.traveloka.data.model.hotel.Hotel
+import com.company.project.traveloka.data.local.model.entitiy.hotel.Hotel
 import com.company.project.traveloka.databinding.ItemRowHotelBinding
 
 class ListHotelAdapter :

@@ -3,7 +3,7 @@ package com.company.project.traveloka.ui.history.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.company.project.traveloka.data.model.history.History
+import com.company.project.traveloka.data.local.model.entitiy.history.History
 import com.company.project.traveloka.databinding.ItemRowHistoryBinding
 
 class ListHistoryAdapter :

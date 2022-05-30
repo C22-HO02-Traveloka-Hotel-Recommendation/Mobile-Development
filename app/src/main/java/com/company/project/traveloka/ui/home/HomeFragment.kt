@@ -32,7 +32,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        (activity as AppCompatActivity?)!!.title = "Home"
         (activity as AppCompatActivity?)!!.supportActionBar!!.show()
 
         binding.datePickerText.setOnClickListener {

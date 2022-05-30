@@ -111,6 +111,13 @@ dependencies {
     implementation "androidx.datastore:datastore-core:$datastore_version"
     implementation "androidx.datastore:datastore-preferences:$datastore_version"
 
+
+    // Room
+    implementation "androidx.room:room-runtime:2.4.2"
+    kapt "androidx.room:room-compiler:2.4.2"
+    implementation 'androidx.room:room-ktx:2.5.0-alpha01'
+    implementation 'androidx.room:room-paging:2.5.0-alpha01'
+
 }
 
 apply plugin: 'com.google.gms.google-services'
