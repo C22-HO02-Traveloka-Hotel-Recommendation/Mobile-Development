@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding.apply {
             btnGoogleSignin.setOnClickListener {
-                signIn()
+                signInGoogle()
             }
 
             btnFbSignin.setOnClickListener {
@@ -64,7 +64,7 @@ class LoginActivity : AppCompatActivity() {
         auth = Firebase.auth
     }
 
-    private fun signIn() {
+    private fun signInGoogle() {
         val signInIntent = googleSignInClient.signInIntent
         resultLauncher.launch(signInIntent)
     }

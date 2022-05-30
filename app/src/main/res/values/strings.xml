@@ -40,4 +40,5 @@
     <string name="sign_in_intent">Have account?</string>
     <string name="sign_in_here">sign in here</string>
     <string name="logout">Logout</string>
+    <string name="success_register">User Registered Successfully</string>
 </resources>
