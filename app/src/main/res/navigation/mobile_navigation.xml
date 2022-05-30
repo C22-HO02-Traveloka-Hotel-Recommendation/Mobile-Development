@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.company.project.traveloka.ui.home.HomeFragment"
-        android:label="@string/home"
+        android:label="@string/home_title"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_navigation_home_to_hotelActivity"

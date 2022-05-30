@@ -7,7 +7,7 @@
     <string name="tab_text_koleksi">Koleksi</string>
     <string name="share">Bagikan</string>
     <string name="help">Bantuan</string>
-    <string name="home_menu">Kembali ke Halaman Awal</string>
+    <string name="home_menu_item">Kembali ke Halaman Awal</string>
     <string name="login">Login with Google</string>
     <string name="register">Register with Google</string>
     <string name="signInText">Don\'t have account?</string>
@@ -17,14 +17,14 @@
     <string name="filter">Filter</string>
     <string name="enterHotelLocation">Enter hotel location or name</string>
     <string name="imagePreview">Image Preview</string>
-    <string name="home">Home</string>
+    <string name="home_title">Home</string>
     <string name="history">History</string>
     <string name="profile">Profile</string>
     <string name="Nama_hotel">Ciao Hotel Jemursari Surabaya</string>
     <string name="hotel_location">Surabaya, East Java</string>
     <string name="Rating_title">Ratings and Review</string>
     <string name="description">Description</string>
-    <string name="description_dummy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas arcu nisl, mollis a pharetra id, maximus eu mi. Ut diam sem, maximus quis lacus et, dignissim elementum tortor. Proin laoreet id mi a facilisis. Aenean faucibus auctor metus, a vulputate lorem mollis id. In vitae nibh nibh. Nullam viverra felis quis purus placerat, eu aliquam purus maximus. Ut sit amet pretium odio, id ullamcorper risus. Nullam dapibus ante ornare, hendrerit nisl ut, ornare tellus. Vivamus consequat tellus in fringilla condimentum. Donec condimentum porta neque non sollicitudin. Praesent condimentum egestas odio quis mollis. In vitae urna lacus. Aliquam metus arcu, volutpat porttitor elementum eleifend, mattis ac dolor. Vivamus vitae dictum massa. Fusce tincidunt felis in elementum lacinia. Suspendisse varius pretium nunc. Praesent varius blandit condimentum. Etiam ut erat risus. Sed turpis dolor, dignissim non libero et, aliquet maximus tortor. Mauris eu nibh quis sem luctus hendrerit eu in nisl. Suspendisse sollicitudin sapien ac augue tincidunt pharetra. Duis in lobortis tellus. Integer elementum dolor justo, vel sagittis metus venenatis ac.</string>
+    <string name="desc_dummy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas arcu nisl, mollis a pharetra id, maximus eu mi. Ut diam sem, maximus quis lacus et, dignissim elementum tortor. Proin laoreet id mi a facilisis. Aenean faucibus auctor metus, a vulputate lorem mollis id. In vitae nibh nibh. Nullam viverra felis quis purus placerat, eu aliquam purus maximus. Ut sit amet pretium odio, id ullamcorper risus. Nullam dapibus ante ornare, hendrerit nisl ut, ornare tellus. Vivamus consequat tellus in fringilla condimentum. Donec condimentum porta neque non sollicitudin. Praesent condimentum egestas odio quis mollis. In vitae urna lacus. Aliquam metus arcu, volutpat porttitor elementum eleifend, mattis ac dolor. Vivamus vitae dictum massa. Fusce tincidunt felis in elementum lacinia. Suspendisse varius pretium nunc. Praesent varius blandit condimentum. Etiam ut erat risus. Sed turpis dolor, dignissim non libero et, aliquet maximus tortor. Mauris eu nibh quis sem luctus hendrerit eu in nisl. Suspendisse sollicitudin sapien ac augue tincidunt pharetra. Duis in lobortis tellus. Integer elementum dolor justo, vel sagittis metus venenatis ac.</string>
     <string name="description_see_details">See Details</string>
     <string name="email_hint">Email</string>
     <string name="password_hint">Password</string>
@@ -39,4 +39,5 @@
     <string name="or_register_using">Or register using</string>
     <string name="sign_in_intent">Have account?</string>
     <string name="sign_in_here">sign in here</string>
+    <string name="logout">Logout</string>
 </resources>
