@@ -47,6 +47,27 @@ class LoginActivity : AppCompatActivity() {
             registerText.setOnClickListener {
                 startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
             }
+            btnSignin.setOnClickListener {
+                val email = binding.textInputEmail.text.toString()
+                val pass = binding.textInputPassword.text.toString()
+
+                if (email.isNotEmpty() && pass.isNotEmpty()) {
+
+                    auth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                            startActivity(intent)
+                            Toast.makeText(this@LoginActivity, getString(R.string.success_login), Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(this@LoginActivity, it.exception.toString(), Toast.LENGTH_SHORT).show()
+
+                        }
+                    }
+                } else {
+                    Toast.makeText(this@LoginActivity, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
+
+                }
+            }
         }
     }
 
