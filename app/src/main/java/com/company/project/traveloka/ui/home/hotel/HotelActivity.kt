@@ -15,6 +15,7 @@ class HotelActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHotelBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.title = "Hotel"
 
         binding.recyclerViewHome.layoutManager = LinearLayoutManager(this)
         val adapter = ListHotelAdapter()

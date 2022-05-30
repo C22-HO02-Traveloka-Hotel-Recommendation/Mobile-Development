@@ -33,6 +33,7 @@ class HistoryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (activity as AppCompatActivity?)!!.title = "History"
         (activity as AppCompatActivity?)!!.supportActionBar!!.show()
 
         binding.recyclerViewHome.layoutManager = LinearLayoutManager(context)
