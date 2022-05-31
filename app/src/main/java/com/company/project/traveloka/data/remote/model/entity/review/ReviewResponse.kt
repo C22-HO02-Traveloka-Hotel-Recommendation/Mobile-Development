@@ -1,11 +1,10 @@
 package com.company.project.traveloka.data.remote.model.entity.review
 
-import com.company.project.traveloka.data.local.model.entitiy.review.Review
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class ReviewResponse(
+data class ReviewResponse<T>(
 
     @Json(name = "status")
     val status: String?,
@@ -14,5 +13,5 @@ data class ReviewResponse(
     val message: String?,
 
     @Json(name = "data")
-    val data: List<Review>?,
+    val data: List<T>? = listOf(),
 )

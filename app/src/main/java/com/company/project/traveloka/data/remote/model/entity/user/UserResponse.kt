@@ -4,7 +4,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class UserResponse(
+data class UserResponse<T>(
     @Json(name = "status")
     val status: String?,
 
@@ -12,5 +12,5 @@ data class UserResponse(
     val message: String?,
 
     @Json(name = "data")
-    val data: User?,
+    val data: List<T>? = listOf(),
 )
