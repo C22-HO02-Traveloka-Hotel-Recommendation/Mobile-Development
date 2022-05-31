@@ -6,10 +6,13 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class Hotel(
     @Json(name = "id")
-    val id: Int?,
+    val id: Long?,
 
     @Json(name = "name")
     val name: String?,
+
+    @Json(name = "address")
+    val address: String?,
 
     @Json(name = "image")
     val image: String?,
