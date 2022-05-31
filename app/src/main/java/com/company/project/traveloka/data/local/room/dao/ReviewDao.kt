@@ -5,16 +5,16 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.company.project.traveloka.data.local.model.entitiy.hotel.Hotel
+import com.company.project.traveloka.data.local.model.entitiy.review.Review
 
 @Dao
-interface HotelDao {
+interface ReviewDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertHotel(hotel: List<Hotel>)
+    suspend fun insertReview(review: List<Review>)
 
-    @Query("SELECT * FROM hotels")
-    fun findAll(): PagingSource<Int, Hotel>
+    @Query("SELECT * FROM reviews")
+    fun findAll(): PagingSource<Int, Review>
 
     @Query("DELETE FROM hotels")
     suspend fun deleteAll()
