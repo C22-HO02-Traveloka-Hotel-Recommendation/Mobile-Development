@@ -7,13 +7,13 @@ import com.squareup.moshi.JsonClass
 data class Review(
 
     @Json(name = "id")
-    val id: Long?,
+    val id: Int?,
 
     @Json(name = "user_id")
-    val userId: Long?,
+    val userId: String?,
 
     @Json(name = "hotel_id")
-    val hotelId: Long?,
+    val hotelId: String?,
 
     @Json(name = "rating")
     val rating: String?,

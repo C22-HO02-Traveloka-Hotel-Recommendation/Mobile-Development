@@ -3,27 +3,33 @@ package com.company.project.traveloka.data.local.model.entitiy.user
 import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import kotlinx.parcelize.Parcelize
 
 @JsonClass(generateAdapter = true)
-@Entity(tableName = "user")
 @Parcelize
+@Entity(tableName = "users")
 data class User(
     @PrimaryKey
-    val id: Int,
+    @Json(name = "id")
+    val id: Int?,
 
-    val name: String,
+    @Json(name = "name")
+    val name: String?,
 
-    val email: String,
+    @Json(name = "email")
+    val email: String?,
 
-    val phone: String,
+    @Json(name = "description")
+    val phone: String?,
 
-    val image: String,
+    @Json(name = "image")
+    val image: String?,
 
-//    val reviews: List<Review>,
+    @Json(name = "created_at")
+    val createdAt: String?,
 
-    val createdAt: String,
-
-    val updatedAt: String,
+    @Json(name = "updated_at")
+    val updatedAt: String?,
 ) : Parcelable

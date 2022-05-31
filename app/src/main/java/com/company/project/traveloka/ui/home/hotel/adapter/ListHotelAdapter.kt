@@ -53,11 +53,11 @@ class ListHotelAdapter :
 
             binding.apply {
                 Glide.with(itemView)
-                    .load(hotel.photoUrl)
+                    .load(hotel.image)
                     .placeholder(R.drawable.ic_block)
                     .into(imgItemPhoto)
                 tvName.text = hotel.name
-                tvStar.text = hotel.star
+                tvStar.text = hotel.star.toString()
                 tvLocation.text = "Jakarta"
                 tvRating.text = hotel.rating.toString()
                 tvPrice.text = hotel.price.toString()
