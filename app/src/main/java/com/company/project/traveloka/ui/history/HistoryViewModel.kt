@@ -1,16 +1,17 @@
 package com.company.project.traveloka.ui.history
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.company.project.traveloka.data.local.model.entitiy.history.History
+import com.company.project.traveloka.data.remote.source.repository.history.HistoryRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class HistoryViewModel @Inject constructor() : ViewModel() {
+class HistoryViewModel @Inject constructor(
+    private val historyRepository: HistoryRepository
+) : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
+    fun generateDummyHistory(): List<History> {
+        return historyRepository.generateDummyHistory()
     }
-    val text: LiveData<String> = _text
 }
