@@ -5,5 +5,8 @@ import com.company.project.traveloka.data.local.model.entitiy.hotel.Hotel
 import kotlinx.coroutines.flow.Flow
 
 interface HotelRepository {
+
     suspend fun findAll(): Flow<PagingData<Hotel>>
+
+    fun generateDummyHotel(): List<Hotel>
 }
