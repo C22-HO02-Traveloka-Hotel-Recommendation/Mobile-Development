@@ -2,6 +2,7 @@ package com.company.project.traveloka.di
 
 import androidx.viewbinding.BuildConfig
 import com.company.project.traveloka.data.remote.source.service.HotelApiService
+import com.company.project.traveloka.data.remote.source.service.ReviewApiService
 import com.company.project.traveloka.data.remote.source.service.UserApiService
 import com.company.project.traveloka.utils.constant.BASE_URL
 import com.squareup.moshi.Moshi
@@ -51,6 +52,11 @@ object ApiServiceModule {
     @Provides
     fun provideHotelApiService(retrofit: Retrofit): HotelApiService =
         retrofit.create(HotelApiService::class.java)
+
+    @Singleton
+    @Provides
+    fun provideReviewApiService(retrofit: Retrofit): ReviewApiService =
+        retrofit.create(ReviewApiService::class.java)
 
     @Singleton
     @Provides
