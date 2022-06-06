@@ -12,7 +12,6 @@ interface HotelApiService {
     suspend fun findAll(
         @Query("page") page: Int = 1,
         @Query("size") size: Int = NETWORK_LOAD_SIZE,
-//        @Header("Authorization") token: String,
         @Query("location") location: Int = 1
     ): HotelResponse<Hotel>
 }
