@@ -1,11 +1,10 @@
 package com.company.project.traveloka.ui.home.hotel.adapter
 
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.company.project.traveloka.ui.home.foryourpage.ForYourPageFragment
+import com.company.project.traveloka.ui.home.hotelforyou.HotelForYouFragment
 import com.company.project.traveloka.ui.home.search.SearchFragment
 
 class SectionsPagerAdapter(
@@ -17,7 +16,7 @@ class SectionsPagerAdapter(
         var fragment: Fragment? = null
         when (position) {
             0 -> {
-                fragment = ForYourPageFragment()
+                fragment = HotelForYouFragment()
             }
             1 -> {
                 fragment = SearchFragment()

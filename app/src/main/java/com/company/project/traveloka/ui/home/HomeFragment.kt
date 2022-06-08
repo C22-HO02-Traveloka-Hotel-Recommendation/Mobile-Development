@@ -62,7 +62,7 @@ class HomeFragment : Fragment() {
 
         @StringRes
         private val TAB_TITLES = intArrayOf(
-            R.string.forYourPage,
+            R.string.hotelForYou,
             R.string.search
         )
     }

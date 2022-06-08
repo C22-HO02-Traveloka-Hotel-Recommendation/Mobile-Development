@@ -44,6 +44,6 @@
     <string name="success_login">User Login Successfully</string>
     <string name="tabLayout">Tab Layout</string>
     <string name="tabName">This is tab</string>
-    <string name="forYourPage">For your page</string>
+    <string name="hotelForYou">Hotel For you</string>
 
 </resources>

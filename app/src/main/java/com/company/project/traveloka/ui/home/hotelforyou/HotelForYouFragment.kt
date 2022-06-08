@@ -1,4 +1,4 @@
-package com.company.project.traveloka.ui.home.foryourpage
+package com.company.project.traveloka.ui.home.hotelforyou
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,11 +14,11 @@ import com.company.project.traveloka.ui.home.hotel.adapter.ListHotelAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ForYourPageFragment : Fragment() {
+class HotelForYouFragment : Fragment() {
 
     private var _binding: FragmentForYourPageBinding? = null
     private val binding get() = _binding!!
-    private val forYourPageViewModel: ForYourPageViewModel by viewModels()
+    private val hotelForYouViewModel: HotelForYouViewModel by viewModels()
     private val hotelViewModel: HotelViewModel by viewModels()
 
     override fun onCreateView(
