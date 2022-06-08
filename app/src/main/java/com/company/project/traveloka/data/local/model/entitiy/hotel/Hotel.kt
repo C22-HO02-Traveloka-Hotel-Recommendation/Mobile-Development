@@ -13,7 +13,7 @@ import kotlinx.parcelize.Parcelize
 data class Hotel(
     @PrimaryKey
     @Json(name = "id")
-    val id: Int,
+    val id: String,
 
     @Json(name = "name")
     val name: String,
@@ -21,26 +21,27 @@ data class Hotel(
     @Json(name = "address")
     val address: String,
 
+    @Json(name = "city")
+    val city: String,
+
+    @Json(name = "state")
+    val state: String,
+
+    @Json(name = "country")
+    val country: String,
+
+    @Json(name = "latitude")
+    val latitude: Double,
+
+    @Json(name = "longitude")
+    val longitude: Double,
+
+    @Json(name = "type")
+    val type: String,
+
     @Json(name = "image")
-    val image: String,
+    val image: String?,
 
     @Json(name = "description")
     val description: String?,
-
-    @Json(name = "created_at")
-    val createdAt: String?,
-
-    @Json(name = "updated_at")
-    val updatedAt: String?,
-
-    val star: Double,
-
-    val price: Double,
-
-    val rating: Double,
-
-    val lat: Double,
-
-    val lon: Double,
-
 ) : Parcelable
