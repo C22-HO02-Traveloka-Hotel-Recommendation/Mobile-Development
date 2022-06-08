@@ -5,7 +5,6 @@ import androidx.paging.PagingState
 import com.company.project.traveloka.data.local.model.entitiy.hotel.Hotel
 import com.company.project.traveloka.data.remote.source.service.HotelApiService
 import com.company.project.traveloka.utils.constant.HOTEL_API_STARTING_INDEX
-import com.company.project.traveloka.utils.constant.NETWORK_LOAD_SIZE
 import okio.IOException
 import retrofit2.HttpException
 
@@ -21,10 +20,7 @@ class HotelPagingSource(private val apiService: HotelApiService) :
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Hotel> {
         return try {
             val position = params.key ?: HOTEL_API_STARTING_INDEX
-            val response = apiService.findAll(
-                page = position,
-                size = NETWORK_LOAD_SIZE,
-            )
+            val response = apiService.findAll()
 
             val hotels = response.data
             val nextKey = if (hotels.isNullOrEmpty()) null else position + 1
