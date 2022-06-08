@@ -26,10 +26,10 @@ class HotelPagingSource(private val apiService: HotelApiService) :
                 size = NETWORK_LOAD_SIZE,
             )
 
-            val stories = response.data
-            val nextKey = if (stories.isNullOrEmpty()) null else position + 1
+            val hotels = response.data
+            val nextKey = if (hotels.isNullOrEmpty()) null else position + 1
             LoadResult.Page(
-                data = stories.orEmpty(),
+                data = hotels.orEmpty(),
                 prevKey = if (position == HOTEL_API_STARTING_INDEX) null else position - 1,
                 nextKey = nextKey
             )

@@ -1,19 +1,19 @@
 package com.company.project.traveloka.ui.home
 
-import android.icu.text.SimpleDateFormat
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.NavHostFragment
+import androidx.viewpager2.widget.ViewPager2
 import com.company.project.traveloka.R
 import com.company.project.traveloka.databinding.FragmentHomeBinding
-import com.google.android.material.datepicker.MaterialDatePicker
+import com.company.project.traveloka.ui.home.hotel.adapter.SectionsPagerAdapter
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.*
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -35,43 +35,35 @@ class HomeFragment : Fragment() {
         (activity as AppCompatActivity?)!!.title = "Home"
         (activity as AppCompatActivity?)!!.supportActionBar!!.show()
 
-        binding.datePickerText.setOnClickListener {
-            // Initiation date picker with
-            // MaterialDatePicker.Builder.datePicker()
-            // and building it using build()
-            val datePicker = MaterialDatePicker.Builder.dateRangePicker().build()
-            datePicker.show(childFragmentManager, "DatePicker")
+        setViewPager()
+    }
 
-            // Setting up the event for when ok is clicked
-            datePicker.addOnPositiveButtonClickListener {
-                // formatting date in dd-mm-yyyy format.
-                val dateFormatter = SimpleDateFormat("EEE, dd MMM yyyy", Locale.US)
-                val dateFirst = dateFormatter.format(Date(it.first))
-                val dateSecond = dateFormatter.format(Date(it.second))
-                binding.datePickerText.hint = "$dateFirst - $dateSecond"
-                Toast.makeText(context, "$dateFirst $dateSecond is selected", Toast.LENGTH_LONG).show()
-            }
+    private fun setViewPager() {
 
-            // Setting up the event for when cancelled is clicked
-            datePicker.addOnNegativeButtonClickListener {
-                Toast.makeText(context, "${datePicker.headerText} is cancelled", Toast.LENGTH_LONG).show()
-            }
+        val viewPager: ViewPager2? = view?.findViewById(R.id.view_pager)
+        val tabs: TabLayout? = view?.findViewById(R.id.tabs)
 
-            // Setting up the event for when back button is pressed
-            datePicker.addOnCancelListener {
-                Toast.makeText(context, "Date Picker Cancelled", Toast.LENGTH_LONG).show()
-            }
-        }
+        val sectionsPagerAdapter = SectionsPagerAdapter(childFragmentManager, lifecycle)
 
-        binding.filledButton.setOnClickListener {
-            NavHostFragment
-                .findNavController(this)
-                .navigate(R.id.action_navigation_home_to_hotelActivity)
+        viewPager?.adapter = sectionsPagerAdapter
+        if (viewPager != null && tabs != null) {
+            TabLayoutMediator(tabs, viewPager) { tab, position ->
+                tab.text = resources.getString(TAB_TITLES[position])
+            }.attach()
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object {
+
+        @StringRes
+        private val TAB_TITLES = intArrayOf(
+            R.string.hotelForYou,
+            R.string.search
+        )
     }
 }

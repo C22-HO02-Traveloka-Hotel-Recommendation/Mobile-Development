@@ -42,4 +42,8 @@
     <string name="logout">Logout</string>
     <string name="success_register">User Registered Successfully</string>
     <string name="success_login">User Login Successfully</string>
+    <string name="tabLayout">Tab Layout</string>
+    <string name="tabName">This is tab</string>
+    <string name="hotelForYou">Hotel For you</string>
+
 </resources>
