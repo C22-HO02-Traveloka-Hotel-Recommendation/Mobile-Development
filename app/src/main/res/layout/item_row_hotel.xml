@@ -48,7 +48,7 @@
             tools:text="Hotel Indonesia" />
 
         <TextView
-            android:id="@+id/tvStar"
+            android:id="@+id/tvType"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -60,10 +60,10 @@
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toEndOf="@+id/img_item_photo"
             card_view:layout_constraintTop_toBottomOf="@+id/tvName"
-            tools:text="*****" />
+            tools:text="Type" />
 
         <TextView
-            android:id="@+id/tvLocation"
+            android:id="@+id/tvCity"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -75,7 +75,7 @@
             android:textStyle="bold"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toEndOf="@+id/img_item_photo"
-            card_view:layout_constraintTop_toBottomOf="@+id/tvStar"
+            card_view:layout_constraintTop_toBottomOf="@+id/tvType"
             tools:text="Jakarta"
             card_view:drawableStartCompat="@drawable/ic_location_on_black" />
 
@@ -92,7 +92,7 @@
             android:textStyle="bold"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toEndOf="@+id/img_item_photo"
-            card_view:layout_constraintTop_toBottomOf="@+id/tvLocation"
+            card_view:layout_constraintTop_toBottomOf="@+id/tvCity"
             tools:text="4.8" />
 
         <TextView
