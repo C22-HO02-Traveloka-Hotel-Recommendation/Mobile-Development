@@ -1,9 +1,11 @@
 package com.company.project.traveloka.ui.register
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.util.Patterns
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -20,7 +22,10 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.jakewharton.rxbinding2.widget.RxTextView
 import dagger.hilt.android.AndroidEntryPoint
+import io.reactivex.Observable
+import io.reactivex.functions.Function3
 
 @AndroidEntryPoint
 class RegisterActivity : AppCompatActivity() {
@@ -36,6 +41,7 @@ class RegisterActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         initGSO()
+        observeRegisterForm()
         auth = Firebase.auth
 
         binding.apply {
@@ -74,6 +80,68 @@ class RegisterActivity : AppCompatActivity() {
                 signInGoogle()
             }
         }
+    }
+
+    @SuppressLint("CheckResult")
+    private fun observeRegisterForm() {
+        val emailStream = RxTextView.textChanges(binding.textInputEmail)
+            .skipInitialValue()
+            .map { email ->
+                !Patterns.EMAIL_ADDRESS.matcher(email).matches()
+            }
+        emailStream.subscribe{
+            showEmailExistAlert(it)
+        }
+
+        val passwordStream = RxTextView.textChanges(binding.textInputPassword)
+            .skipInitialValue()
+            .map { password ->
+                password.length < 6
+            }
+        passwordStream.subscribe{
+            showPasswordMinimalAlert(it)
+        }
+
+        val passwordConfirmationStream = Observable.merge(
+            RxTextView.textChanges(binding.textInputPassword)
+                .map { password ->
+                    password.toString() != binding.textInputConfirmPassword.text.toString()
+                },
+            RxTextView.textChanges(binding.textInputConfirmPassword)
+                .map { confirmPassword ->
+                    confirmPassword.toString() != binding.textInputPassword.text.toString()
+                }
+        )
+        passwordConfirmationStream.subscribe{
+            showPasswordConfirmationAlert(it)
+        }
+
+        val invalidFieldsStream = Observable.combineLatest(
+            emailStream,
+            passwordStream,
+            passwordConfirmationStream,
+            Function3 { emailInvalid: Boolean, passwordInvalid: Boolean, passwordConfirmationInvalid: Boolean ->
+                !emailInvalid && !passwordInvalid && !passwordConfirmationInvalid
+            })
+        invalidFieldsStream.subscribe{ isValid ->
+            if (isValid) {
+                binding.btnSignin.isEnabled = true
+            } else {
+                binding.btnSignin.isEnabled = false
+            }
+        }
+    }
+
+    private fun showEmailExistAlert(isNotValid: Boolean) {
+        binding.textInputEmail.error = if (isNotValid) getString(R.string.email_not_valid) else null
+    }
+
+    private fun showPasswordMinimalAlert(isNotValid: Boolean) {
+        binding.textInputPassword.error = if (isNotValid) getString(R.string.password_not_valid) else null
+    }
+
+    private fun showPasswordConfirmationAlert(isNotValid: Boolean) {
+        binding.textInputConfirmPassword.error = if (isNotValid) getString(R.string.password_not_same) else null
     }
 
     private fun initGSO() {
