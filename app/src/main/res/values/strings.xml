@@ -46,4 +46,8 @@
     <string name="tabName">This is tab</string>
     <string name="hotelForYou">Hotel For you</string>
     <string name="retry">Try again</string>
+    <string name="email_not_valid">Email is Invalid</string>
+    <string name="password_not_valid">Password need to be more than 5 character</string>
+    <string name="password_not_same">Password is not same</string>
+
 </resources>

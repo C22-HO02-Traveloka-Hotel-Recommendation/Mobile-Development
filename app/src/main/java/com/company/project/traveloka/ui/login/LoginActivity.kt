@@ -1,9 +1,11 @@
 package com.company.project.traveloka.ui.login
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.util.Patterns
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +22,8 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.jakewharton.rxbinding2.widget.RxTextView
+import io.reactivex.Observable
 
 class LoginActivity : AppCompatActivity() {
 
@@ -34,6 +38,7 @@ class LoginActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         initGSO()
+        observeLoginForm()
 
         binding.apply {
             btnGoogleSignin.setOnClickListener {
@@ -69,6 +74,50 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    @SuppressLint("CheckResult")
+    private fun observeLoginForm() {
+        val emailStream = RxTextView.textChanges(binding.textInputEmail)
+            .skipInitialValue()
+            .map { email ->
+                !Patterns.EMAIL_ADDRESS.matcher(email).matches()
+            }
+        emailStream.subscribe{
+            showEmailExistAlert(it)
+        }
+
+        val passwordStream = RxTextView.textChanges(binding.textInputPassword)
+            .skipInitialValue()
+            .map { password ->
+                password.length < 6
+            }
+        passwordStream.subscribe{
+            showPasswordMinimalAlert(it)
+        }
+
+
+        val invalidFieldsStream = Observable.combineLatest(
+            emailStream,
+            passwordStream,
+            { emailInvalid: Boolean, passwordInvalid: Boolean ->
+                !emailInvalid && !passwordInvalid
+            })
+        invalidFieldsStream.subscribe{ isValid ->
+            if (isValid) {
+                binding.btnSignin.isEnabled = true
+            } else {
+                binding.btnSignin.isEnabled = false
+            }
+        }
+    }
+
+    private fun showEmailExistAlert(isNotValid: Boolean) {
+        binding.textInputEmail.error = if (isNotValid) getString(R.string.email_not_valid) else null
+    }
+
+    private fun showPasswordMinimalAlert(isNotValid: Boolean) {
+        binding.textInputPassword.error = if (isNotValid) getString(R.string.password_not_valid) else null
     }
 
     private fun initGSO() {
