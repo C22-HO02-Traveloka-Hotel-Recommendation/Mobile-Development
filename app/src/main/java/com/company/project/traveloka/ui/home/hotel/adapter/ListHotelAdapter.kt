@@ -1,7 +1,10 @@
 package com.company.project.traveloka.ui.home.hotel.adapter
 
+import android.app.Activity
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.app.ActivityOptionsCompat
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -9,6 +12,7 @@ import com.bumptech.glide.Glide
 import com.company.project.traveloka.R
 import com.company.project.traveloka.data.local.model.entitiy.hotel.Hotel
 import com.company.project.traveloka.databinding.ItemRowHotelBinding
+import com.company.project.traveloka.ui.home.hotel.detail.DetailActivity
 
 class ListHotelAdapter :
     PagingDataAdapter<Hotel, ListHotelAdapter.HotelViewHolder>(Comparator) {
@@ -42,21 +46,6 @@ class ListHotelAdapter :
 
 //            val zonedDateTime = ZonedDateTime.parse(story.createdAt)
 //            val dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy", Locale("id", "ID"))
-//
-//            itemView.setOnClickListener {
-//                val intent = Intent(itemView.context, DetailActivity::class.java)
-//                intent.putExtra(DetailActivity.extraStory, story)
-//
-//                val optionsCompat: ActivityOptionsCompat =
-//                    ActivityOptionsCompat.makeSceneTransitionAnimation(
-//                        itemView.context as Activity,
-//                        Pair(binding.imgItemPhoto, "storyImage"),
-//                        Pair(binding.tvName, "name"),
-//                        Pair(binding.tvDate, "date"),
-//                        Pair(binding.tvDescription, "description"),
-//                    )
-//                itemView.context.startActivity(intent, optionsCompat.toBundle())
-//            }
 
             binding.apply {
                 Glide.with(itemView)
@@ -66,8 +55,20 @@ class ListHotelAdapter :
                 tvName.text = hotel.name
                 tvType.text = hotel.type
                 tvCity.text = hotel.city
-                //                tvRating.text = hotel.rating.toString()
-                //                tvPrice.text = hotel.price.toString()
+            }
+
+            itemView.setOnClickListener {
+
+//                val optionsCompat: ActivityOptionsCompat =
+//                    ActivityOptionsCompat.makeSceneTransitionAnimation(
+//                        itemView.context as Activity,
+//                        Pair(binding.imgItemPhoto, "hotelPhoto"),
+//                        Pair(binding.tvName, "name"),
+//                    )
+                val intent = Intent(itemView.context, DetailActivity::class.java)
+                intent.putExtra(DetailActivity.extraHotel, hotel)
+//                itemView.context.startActivity(intent, optionsCompat.toBundle())
+                itemView.context.startActivity(intent)
             }
         }
     }
