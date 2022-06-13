@@ -15,7 +15,11 @@ import javax.inject.Inject
 class HotelForYouViewModel @Inject constructor(private val hotelRepository: HotelRepository) :
     ViewModel() {
 
-    suspend fun findAll(): LiveData<PagingData<Hotel>> {
-        return hotelRepository.findAll().cachedIn(viewModelScope).asLiveData()
+    suspend fun findAll(token: String): LiveData<PagingData<Hotel>> {
+        return hotelRepository.findAll(token).cachedIn(viewModelScope).asLiveData()
+    }
+
+    suspend fun findByName(token: String, hotelName: String): LiveData<PagingData<Hotel>> {
+        return hotelRepository.findByName(token, hotelName).cachedIn(viewModelScope).asLiveData()
     }
 }

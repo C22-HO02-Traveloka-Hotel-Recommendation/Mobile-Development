@@ -6,7 +6,9 @@ import kotlinx.coroutines.flow.Flow
 
 interface HotelRepository {
 
-    suspend fun findAll(): Flow<PagingData<Hotel>>
+    suspend fun findAll(token: String): Flow<PagingData<Hotel>>
+
+    suspend fun findByName(token: String, hotelName: String): Flow<PagingData<Hotel>>
 
     fun generateDummyHotel(): List<Hotel>
 }

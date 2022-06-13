@@ -15,11 +15,23 @@ class HotelRepositoryImpl @Inject constructor(
 ) :
     HotelRepository {
 
-    override suspend fun findAll(): Flow<PagingData<Hotel>> = Pager(
+    override suspend fun findAll(token: String): Flow<PagingData<Hotel>> = Pager(
         config = PagingConfig(pageSize = NETWORK_LOAD_SIZE),
         pagingSourceFactory = {
             HotelPagingSource(
+                token,
                 apiService = hotelApiService
+            )
+        }
+    ).flow
+
+    override suspend fun findByName(token: String, hotelName: String): Flow<PagingData<Hotel>> = Pager(
+        config = PagingConfig(pageSize = NETWORK_LOAD_SIZE),
+        pagingSourceFactory = {
+            HotelPagingSource(
+                token,
+                apiService = hotelApiService,
+                hotelName
             )
         }
     ).flow
