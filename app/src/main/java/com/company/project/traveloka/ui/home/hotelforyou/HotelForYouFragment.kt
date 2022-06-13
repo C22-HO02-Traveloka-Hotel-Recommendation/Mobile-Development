@@ -1,6 +1,7 @@
 package com.company.project.traveloka.ui.home.hotelforyou
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,8 @@ import com.company.project.traveloka.databinding.FragmentForYourPageBinding
 import com.company.project.traveloka.ui.home.LoadingStateAdapter
 import com.company.project.traveloka.ui.home.hotel.HotelViewModel
 import com.company.project.traveloka.ui.home.hotel.adapter.ListHotelAdapter
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job
 
@@ -27,6 +30,7 @@ class HotelForYouFragment : Fragment() {
     private var response: BaseResponse? = null
 //    private val hotelAdapter: ListHotelAdapter by lazy { ListHotelAdapter() }
     private lateinit var adapter: ListHotelAdapter
+//    private var token: String? = ""
 
     private var job: Job = Job()
 
@@ -50,18 +54,21 @@ class HotelForYouFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 //        (activity as AppCompatActivity?)!!.title = "Test"
         (activity as AppCompatActivity?)!!.supportActionBar!!.show()
+        val user = Firebase.auth.currentUser?.getIdToken(false)?.addOnSuccessListener {
+            it.token
+        }
+        user?.result?.token
+        Log.d("HotelForYouFragment", "firebaseAuthWithGoogle:" + user?.result?.token)
         setRecyclerView()
-        setupViewModel()
+        setupViewModel(user?.result?.token)
     }
 
-    private fun setupViewModel() {
+    private fun setupViewModel(token: String?) {
 
         lifecycleScope.launchWhenResumed {
             if (job.isActive) job.cancel()
-            val adapter = ListHotelAdapter()
-            binding.recyclerForYourHotel.adapter = adapter
-            hotelForYouViewModel.findAll().observe(viewLifecycleOwner) { hotels ->
-//                adapter.setStoryList(hotels)
+//            adapter = ListHotelAdapter()
+            hotelForYouViewModel.findAll("Bearer $token").observe(viewLifecycleOwner) { hotels ->
                 adapter.submitData(lifecycle, hotels)
             }
         }
