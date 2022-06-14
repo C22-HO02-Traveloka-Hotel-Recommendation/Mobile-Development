@@ -5,7 +5,7 @@ Having such a varied user base and inventory brings in new challenges. One of th
 
 ### Screenshots
 
-[comment]: <> (![AppScreenshots]&#40;https://user-images.githubusercontent.com/69246482/172908044-38723164-9df6-4562-b7f7-3fb9b65a1e7d.png&#41;)
+![AppScreenshots](<img src="My_hotel.png?raw=true" width=100%/>)
 
 ## Development
 
