@@ -7,6 +7,8 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.company.project.traveloka.data.local.model.entitiy.hotel.Hotel
+import com.company.project.traveloka.data.local.model.entitiy.review.Review
+import com.company.project.traveloka.data.remote.model.entity.review.ReviewResponse
 import com.company.project.traveloka.data.remote.source.repository.hotel.HotelRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -21,5 +23,9 @@ class HotelForYouViewModel @Inject constructor(private val hotelRepository: Hote
 
     suspend fun findByName(token: String, hotelName: String): LiveData<PagingData<Hotel>> {
         return hotelRepository.findByName(token, hotelName).cachedIn(viewModelScope).asLiveData()
+    }
+
+    suspend fun findHotelReviewsByHotelId(token: String, id: String): ReviewResponse<Review> {
+        return hotelRepository.findHotelReviewsByHotelId(token, id)
     }
 }

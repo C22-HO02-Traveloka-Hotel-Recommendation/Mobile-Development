@@ -8,4 +8,7 @@ interface ReviewApiService {
 
     @GET("reviews")
     suspend fun findAll(): ReviewResponse<Review>
+//
+//    @GET("reviews")
+//    suspend fun findAll(): ReviewResponse<Review>
 }

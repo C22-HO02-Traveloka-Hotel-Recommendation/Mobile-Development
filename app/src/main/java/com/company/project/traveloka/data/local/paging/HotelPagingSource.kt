@@ -4,8 +4,8 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.company.project.traveloka.data.local.model.entitiy.hotel.Hotel
 import com.company.project.traveloka.data.remote.source.service.HotelApiService
-import com.company.project.traveloka.utils.constant.HOTEL_API_STARTING_INDEX
-import com.company.project.traveloka.utils.constant.NETWORK_LOAD_SIZE
+import com.company.project.traveloka.utils.Constant.HOTEL_API_STARTING_INDEX
+import com.company.project.traveloka.utils.Constant.NETWORK_LOAD_SIZE
 import okio.IOException
 import retrofit2.HttpException
 
