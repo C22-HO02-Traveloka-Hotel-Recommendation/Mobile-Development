@@ -5,7 +5,8 @@ Having such a varied user base and inventory brings in new challenges. One of th
 
 ### Screenshots
 
-![AppScreenshots](<img src="My_hotel.png?raw=true" width=100%/>)
+![AppScreenshots]()
+<img src="My_hotel.png?raw=true" width=100%/>
 
 ## Development
 
