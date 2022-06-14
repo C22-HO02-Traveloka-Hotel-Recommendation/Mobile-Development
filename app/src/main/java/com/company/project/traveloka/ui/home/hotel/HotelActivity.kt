@@ -5,6 +5,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.company.project.traveloka.databinding.ActivityHotelBinding
+import com.company.project.traveloka.ui.home.hotel.adapter.HotelSearchAdapter
 import com.company.project.traveloka.ui.home.hotel.adapter.ListHotelAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,8 +22,8 @@ class HotelActivity : AppCompatActivity() {
         supportActionBar?.title = "Hotel"
 
         binding.recyclerViewHome.layoutManager = LinearLayoutManager(this)
-        val adapter = ListHotelAdapter()
-        adapter.setStoryList(hotelViewModel.generateDummyHotel())
+        val adapter = HotelSearchAdapter(hotelViewModel.generateDummyHotel())
+//        adapter.setStoryList(hotelViewModel.generateDummyHotel())
         binding.recyclerViewHome.adapter = adapter
     }
 }
