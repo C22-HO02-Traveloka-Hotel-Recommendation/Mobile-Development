@@ -9,7 +9,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Review(
     @Json(name = "id")
-    val id: Int?,
+    val id: String?,
 
     @Json(name = "user_id")
     val userId: String?,
@@ -21,11 +21,5 @@ data class Review(
     val rating: String?,
 
     @Json(name = "comment")
-    val comment: String?,
-
-    @Json(name = "created_at")
-    val createdAt: String?,
-
-    @Json(name = "updated_at")
-    val updatedAt: String?,
+    val comment: String?
 ) : Parcelable

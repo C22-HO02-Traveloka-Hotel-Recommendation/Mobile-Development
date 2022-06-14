@@ -38,6 +38,21 @@ data class Hotel(
     @Json(name = "image")
     val image: String?,
 
+    @Json(name = "price")
+    val price: Long?,
+
+    @Json(name = "stars")
+    val stars: Int?,
+
     @Json(name = "description")
     val description: String?,
+
+    @Json(name = "hotelFacilities")
+    val hotelFacilities: List<HotelFacility>?,
+
+    @Json(name = "pointOfInterests")
+    val pointOfInterests: List<PointOfInterest>?,
+
+    @Json(name = "roomFacilities")
+    val roomFacilities: List<RoomFacility>?,
 ) : Parcelable
