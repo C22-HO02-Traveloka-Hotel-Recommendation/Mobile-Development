@@ -38,8 +38,6 @@ class ListHotelAdapter :
 
         fun bind(hotel: Hotel) {
 
-//            val zonedDateTime = ZonedDateTime.parse(story.createdAt)
-//            val dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy", Locale("id", "ID"))
             binding.apply {
                 Glide.with(itemView)
                     .load(hotel.image)
@@ -55,15 +53,8 @@ class ListHotelAdapter :
 
             itemView.setOnClickListener {
 
-//                val optionsCompat: ActivityOptionsCompat =
-//                    ActivityOptionsCompat.makeSceneTransitionAnimation(
-//                        itemView.context as Activity,
-//                        Pair(binding.imgItemPhoto, "hotelPhoto"),
-//                        Pair(binding.tvName, "name"),
-//                    )
                 val intent = Intent(itemView.context, DetailActivity::class.java)
                 intent.putExtra(DetailActivity.extraHotel, hotel)
-//                itemView.context.startActivity(intent, optionsCompat.toBundle())
                 itemView.context.startActivity(intent)
             }
         }

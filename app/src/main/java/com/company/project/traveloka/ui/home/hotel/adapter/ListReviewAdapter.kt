@@ -32,20 +32,6 @@ class ListReviewAdapter(private val listHotelReview: List<Review>?) :
                 tvRating.text = StringBuilder().append("Rating: ").append(review.rating)
                 tvComment.text = review.comment
             }
-
-//            itemView.setOnClickListener {
-
-//                val optionsCompat: ActivityOptionsCompat =
-//                    ActivityOptionsCompat.makeSceneTransitionAnimation(
-//                        itemView.context as Activity,
-//                        Pair(binding.imgItemPhoto, "hotelPhoto"),
-//                        Pair(binding.tvName, "name"),
-//                    )
-//                val intent = Intent(itemView.context, DetailActivity::class.java)
-//                intent.putExtra(DetailActivity.extraHotel, hotel)
-//                itemView.context.startActivity(intent, optionsCompat.toBundle())
-//                itemView.context.startActivity(intent)
-//            }
         }
     }
 }
