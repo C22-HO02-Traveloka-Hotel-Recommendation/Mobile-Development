@@ -12,5 +12,5 @@ data class UserResponse<T>(
     val message: String?,
 
     @Json(name = "data")
-    val data: List<T>? = listOf(),
+    val data: T
 )

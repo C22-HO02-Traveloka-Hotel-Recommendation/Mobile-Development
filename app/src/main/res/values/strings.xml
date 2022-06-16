@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">My Hotel</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tab_text_post">Post</string>
@@ -15,12 +15,12 @@
     <string name="search">Search</string>
     <string name="date">Date</string>
     <string name="filter">Filter</string>
-    <string name="enterHotelLocation">Enter hotel location or name</string>
+    <string name="enterHotelLocation">Enter hotel location or city</string>
     <string name="imagePreview">Image Preview</string>
     <string name="home_title">Home</string>
     <string name="history">History</string>
     <string name="profile">Profile</string>
-    <string name="Nama_hotel">Ciao Hotel Jemursari Surabaya</string>
+    <string name="hotelName">Ciao Hotel Jemursari Surabaya</string>
     <string name="hotel_location">Surabaya, East Java</string>
     <string name="Rating_title">Ratings and Review</string>
     <string name="description">Description</string>
@@ -49,5 +49,10 @@
     <string name="email_not_valid">Email is Invalid</string>
     <string name="password_not_valid">Password need to be more than 5 character</string>
     <string name="password_not_same">Password is not same</string>
+    <string name="recommendation">Recommendation</string>
+    <string name="hotel_name">Hotel name or City</string>
+    <string name="location">location</string>
+    <string name="hotel_image">hotel image</string>
+    <string name="add_post">add post</string>
 
 </resources>

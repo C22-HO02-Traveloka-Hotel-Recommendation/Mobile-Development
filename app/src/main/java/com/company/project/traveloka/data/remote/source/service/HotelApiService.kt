@@ -20,10 +20,11 @@ interface HotelApiService {
     ): HotelResponse<Hotel>
 
     @GET("hotels")
-    suspend fun findByName(
+    suspend fun findByNameOrCity(
         @Header("Authorization") token: String,
-        @Query("limit") hotelName: String,
-//        @Query("offset") size: Int = NETWORK_LOAD_SIZE
+        @Query("search") hotelName: String,
+        @Query("limit") page: Int = 15,
+        @Query("offset") size: Int = 15
     ): HotelResponse<Hotel>
 
     @GET("hotels/{id}/reviews")

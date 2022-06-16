@@ -19,13 +19,13 @@
 
         <ImageView
             android:id="@+id/img_item_photo"
-            android:transitionName="hotelPhoto"
             android:layout_width="150dp"
             android:layout_height="200dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:contentDescription="@string/imagePreview"
+            android:transitionName="hotelPhoto"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"
@@ -34,7 +34,6 @@
 
         <TextView
             android:id="@+id/tvName"
-            android:transitionName="name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -44,6 +43,7 @@
             android:textAlignment="viewStart"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:transitionName="name"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toEndOf="@+id/img_item_photo"
             card_view:layout_constraintTop_toTopOf="parent"
@@ -75,11 +75,11 @@
             android:textAlignment="viewStart"
             android:textSize="20sp"
             android:textStyle="bold"
+            card_view:drawableStartCompat="@drawable/ic_location_on_black"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toEndOf="@+id/img_item_photo"
             card_view:layout_constraintTop_toBottomOf="@+id/tvType"
-            tools:text="Jakarta"
-            card_view:drawableStartCompat="@drawable/ic_location_on_black" />
+            tools:text="Jakarta" />
 
         <TextView
             android:id="@+id/tvRating"

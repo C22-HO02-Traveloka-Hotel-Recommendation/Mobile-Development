@@ -12,7 +12,6 @@ import retrofit2.HttpException
 class HotelPagingSource(
     private val token: String,
     private val apiService: HotelApiService,
-    private val hotelName: String = ""
 ) :
     PagingSource<Int, Hotel>() {
 
@@ -27,7 +26,6 @@ class HotelPagingSource(
             val position = params.key ?: HOTEL_API_STARTING_INDEX
             val response = apiService.findAll(
                 token,
-//                hotelName
                 page = position,
                 size = NETWORK_LOAD_SIZE
             )

@@ -15,8 +15,6 @@ import com.company.project.traveloka.ui.home.hotel.detail.DetailActivity
 class ListHotelAdapter :
     PagingDataAdapter<Hotel, ListHotelAdapter.HotelViewHolder>(Comparator) {
 
-//    private var hotels: List<Hotel>? = null
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HotelViewHolder = HotelViewHolder(
         binding = ItemRowHotelBinding.inflate(
             LayoutInflater.from(parent.context),

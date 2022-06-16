@@ -31,12 +31,15 @@ class HotelSearchAdapter(private val listHotel: List<Hotel>?) :
     inner class HotelViewHolder(var binding: ItemSearchHotelBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(hotel: Hotel) {
+            val price = hotel.price?.div(1000)
             binding.apply {
                 Glide.with(itemView)
                     .load(hotel.image)
                     .placeholder(R.drawable.ic_block)
                     .into(imgItemPhoto)
                 tvName.text = hotel.name
+                tvRating.text = StringBuilder().append(hotel.stars.toString()).append(" Star")
+                tvPrice.text = StringBuilder().append("Rp").append(price).append("k /Night")
                 tvType.text = hotel.type
                 tvCity.text = hotel.city
             }

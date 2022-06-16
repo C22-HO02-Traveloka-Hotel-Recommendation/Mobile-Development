@@ -6,6 +6,7 @@ import androidx.paging.PagingData
 import com.company.project.traveloka.data.local.model.entitiy.hotel.Hotel
 import com.company.project.traveloka.data.local.model.entitiy.review.Review
 import com.company.project.traveloka.data.local.paging.HotelPagingSource
+import com.company.project.traveloka.data.remote.model.entity.hotel.HotelResponse
 import com.company.project.traveloka.data.remote.model.entity.review.ReviewResponse
 import com.company.project.traveloka.data.remote.source.service.HotelApiService
 import com.company.project.traveloka.utils.Constant.NETWORK_LOAD_SIZE
@@ -27,17 +28,13 @@ class HotelRepositoryImpl @Inject constructor(
         }
     ).flow
 
-    override suspend fun findByName(token: String, hotelName: String): Flow<PagingData<Hotel>> =
-        Pager(
-            config = PagingConfig(pageSize = NETWORK_LOAD_SIZE),
-            pagingSourceFactory = {
-                HotelPagingSource(
-                    token,
-                    apiService = hotelApiService,
-                    hotelName
-                )
-            }
-        ).flow
+    override suspend fun findRecommendationHotel(token: String): HotelResponse<Hotel> {
+        return hotelApiService.findAll(token, 5, 5)
+    }
+
+    override suspend fun findByNameOrCity(token: String, hotelName: String): HotelResponse<Hotel> {
+        return hotelApiService.findByNameOrCity(token, hotelName)
+    }
 
     override suspend fun findHotelReviewsByHotelId(
         token: String,

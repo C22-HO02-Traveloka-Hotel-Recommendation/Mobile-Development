@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "683631432997",
+    "project_id": "traveloka-hotel-opt",
+    "storage_bucket": "traveloka-hotel-opt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683631432997:android:44036bd33038201fe9f6cc",
+        "android_client_info": {
+          "package_name": "com.company.project.traveloka"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "683631432997-k0s2b8plldsqiqiv4t9b1p0u2dhnd8im.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASO98Bl3xTdFMR4V8vV6l4pIU3fMu1rB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "683631432997-k0s2b8plldsqiqiv4t9b1p0u2dhnd8im.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683631432997:android:0c0230f855b7da70e9f6cc",
+        "android_client_info": {
+          "package_name": "com.company.project.travelokaa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "683631432997-r53pm0lfu0i2rf31rr78qu30jkkik61r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.company.project.travelokaa",
+            "certificate_hash": "2c5edc9a99173bc2f88c07ae0d79ef622568f828"
+          }
+        },
+        {
+          "client_id": "683631432997-k0s2b8plldsqiqiv4t9b1p0u2dhnd8im.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASO98Bl3xTdFMR4V8vV6l4pIU3fMu1rB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "683631432997-k0s2b8plldsqiqiv4t9b1p0u2dhnd8im.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
