@@ -3,10 +3,10 @@
 ## App Description
 Having such a varied user base and inventory brings in new challenges. One of the biggest challenges that Traveloka faces is to decipher the appropriate order in which hotels should be displayed for a user when searching on our platform. Abdool et al., in their paper, Managing Diversity in Airbnb Search, state that the probability of the user clicking on a particular hotel and eventually booking it decays as the user goes down the list of hotels displayed to the user. As a result, having a relevant ordering of these hotels for our users directly impacts the business that Traveloka brings in for its partners. We take the challenge by making a new approach to enhance hotel recommendations using a wide and deep learning network model to strike the right balance between memorization and generalization. With such a vast and varied user base, we acknowledged the fact that a one-size-fits-all solution would not have worked to cater to the varying demand and supply. There was a need to provide our users with a more personalized experience on the hotel search page.
 
-Download Apk : 
+Download Apk : https://drive.google.com/file/d/1tLwsdLFqsOnGXEYXJowCoiIXYHUyJsYL/view?usp=sharing
 
 ### Screenshots
-![AppScreenshots](https://raw.githubusercontent.com/robertheo15/company-project/enhancement/integrate-api-2/My_hotel.png)
+![AppScreenshots](https://raw.githubusercontent.com/robertheo15/company-project/main/My_hotel.png)
 
 ## Development
 
