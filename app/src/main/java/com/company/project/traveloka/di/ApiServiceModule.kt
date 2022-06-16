@@ -4,7 +4,7 @@ import androidx.viewbinding.BuildConfig
 import com.company.project.traveloka.data.remote.source.service.HotelApiService
 import com.company.project.traveloka.data.remote.source.service.ReviewApiService
 import com.company.project.traveloka.data.remote.source.service.UserApiService
-import com.company.project.traveloka.utils.constant.BASE_URL
+import com.company.project.traveloka.utils.Constant.BASE_URL
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module

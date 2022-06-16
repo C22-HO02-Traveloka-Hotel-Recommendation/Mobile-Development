@@ -1,19 +1,15 @@
 package com.company.project.traveloka.data.local.model.entitiy.hotel
 
 import android.os.Parcelable
-import androidx.room.Entity
-import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import kotlinx.parcelize.Parcelize
 
 @JsonClass(generateAdapter = true)
 @Parcelize
-@Entity(tableName = "hotels")
 data class Hotel(
-    @PrimaryKey
     @Json(name = "id")
-    val id: Int,
+    val id: String,
 
     @Json(name = "name")
     val name: String,
@@ -21,26 +17,42 @@ data class Hotel(
     @Json(name = "address")
     val address: String,
 
+    @Json(name = "city")
+    val city: String,
+
+    @Json(name = "state")
+    val state: String,
+
+    @Json(name = "country")
+    val country: String,
+
+    @Json(name = "latitude")
+    val latitude: Double,
+
+    @Json(name = "longitude")
+    val longitude: Double,
+
+    @Json(name = "type")
+    val type: String,
+
     @Json(name = "image")
-    val image: String,
+    val image: String?,
+
+    @Json(name = "price")
+    val price: Long?,
+
+    @Json(name = "stars")
+    val stars: Int?,
 
     @Json(name = "description")
     val description: String?,
 
-    @Json(name = "created_at")
-    val createdAt: String?,
+    @Json(name = "hotelFacilities")
+    val hotelFacilities: List<HotelFacility>?,
 
-    @Json(name = "updated_at")
-    val updatedAt: String?,
+    @Json(name = "pointOfInterests")
+    val pointOfInterests: List<PointOfInterest>?,
 
-    val star: Double,
-
-    val price: Double,
-
-    val rating: Double,
-
-    val lat: Double,
-
-    val lon: Double,
-
+    @Json(name = "roomFacilities")
+    val roomFacilities: List<RoomFacility>?,
 ) : Parcelable

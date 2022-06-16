@@ -46,7 +46,8 @@ class LoginActivity : AppCompatActivity() {
             }
 
             btnFbSignin.setOnClickListener {
-                Toast.makeText(this@LoginActivity, "Feature not available", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@LoginActivity, "Feature not available", Toast.LENGTH_SHORT)
+                    .show()
             }
 
             registerText.setOnClickListener {
@@ -58,22 +59,43 @@ class LoginActivity : AppCompatActivity() {
 
                 if (email.isNotEmpty() && pass.isNotEmpty()) {
 
-                    auth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
-                        if (it.isSuccessful) {
-                            val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                            startActivity(intent)
-                            Toast.makeText(this@LoginActivity, getString(R.string.success_login), Toast.LENGTH_SHORT).show()
-                        } else {
-                            Toast.makeText(this@LoginActivity, it.exception.toString(), Toast.LENGTH_SHORT).show()
+                    auth.signInWithEmailAndPassword(email, pass).addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            var token: String? = ""
+                            task.result.user?.getIdToken(false)?.addOnSuccessListener {
+                                token = it.token
+                                Log.d(TAG, "firebaseAuthWithGoogle:" + token)
+                            }
 
+                            val user = auth.currentUser
+
+                            updateUI(user)
+                            Toast.makeText(
+                                this@LoginActivity,
+                                getString(R.string.success_login),
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        } else {
+                            Toast.makeText(
+                                this@LoginActivity,
+                                task.exception.toString(),
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
                     }
                 } else {
-                    Toast.makeText(this@LoginActivity, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
-
+                    Toast.makeText(
+                        this@LoginActivity,
+                        "Empty Fields Are not Allowed !!",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
         }
+    }
+
+    private fun getToken(token: String?) {
+        Log.d(TAG, "firebaseAuthWithGoogle:" + token)
     }
 
     @SuppressLint("CheckResult")
@@ -83,7 +105,7 @@ class LoginActivity : AppCompatActivity() {
             .map { email ->
                 !Patterns.EMAIL_ADDRESS.matcher(email).matches()
             }
-        emailStream.subscribe{
+        emailStream.subscribe {
             showEmailExistAlert(it)
         }
 
@@ -92,23 +114,18 @@ class LoginActivity : AppCompatActivity() {
             .map { password ->
                 password.length < 6
             }
-        passwordStream.subscribe{
+        passwordStream.subscribe {
             showPasswordMinimalAlert(it)
         }
 
-
         val invalidFieldsStream = Observable.combineLatest(
             emailStream,
-            passwordStream,
-            { emailInvalid: Boolean, passwordInvalid: Boolean ->
-                !emailInvalid && !passwordInvalid
-            })
-        invalidFieldsStream.subscribe{ isValid ->
-            if (isValid) {
-                binding.btnSignin.isEnabled = true
-            } else {
-                binding.btnSignin.isEnabled = false
-            }
+            passwordStream
+        ) { emailInvalid: Boolean, passwordInvalid: Boolean ->
+            !emailInvalid && !passwordInvalid
+        }
+        invalidFieldsStream.subscribe { isValid ->
+            binding.btnSignin.isEnabled = isValid
         }
     }
 
@@ -117,7 +134,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun showPasswordMinimalAlert(isNotValid: Boolean) {
-        binding.textInputPassword.error = if (isNotValid) getString(R.string.password_not_valid) else null
+        binding.textInputPassword.error =
+            if (isNotValid) getString(R.string.password_not_valid) else null
     }
 
     private fun initGSO() {
@@ -148,6 +166,7 @@ class LoginActivity : AppCompatActivity() {
                 // Google Sign In was successful, authenticate with Firebase
                 val account = task.getResult(ApiException::class.java)!!
                 Log.d(TAG, "firebaseAuthWithGoogle:" + account.id)
+                Log.d(TAG, "firebaseAuthWithGoogle:" + account.idToken)
                 firebaseAuthWithGoogle(account.idToken!!)
             } catch (e: ApiException) {
                 // Google Sign In failed, update UI appropriately
@@ -155,13 +174,14 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
+
     private fun firebaseAuthWithGoogle(idToken: String) {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "signInWithCredential:success")
+                    Log.e(TAG, "signInWithCredential:success")
                     val user = auth.currentUser
                     updateUI(user)
                 } else {
@@ -171,8 +191,9 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
     }
+
     private fun updateUI(currentUser: FirebaseUser?) {
-        if (currentUser != null){
+        if (currentUser != null) {
             startActivity(Intent(this@LoginActivity, MainActivity::class.java))
             finish()
         }
@@ -181,7 +202,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-        //check if user is signed
+        // check if user is signed
         val currentUser = auth.currentUser
         updateUI(currentUser)
     }
@@ -189,5 +210,4 @@ class LoginActivity : AppCompatActivity() {
     companion object {
         private const val TAG = "LoginActivity"
     }
-
 }
