@@ -12,7 +12,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.company.project.travelokaa"
+        applicationId "com.company.project.travelokaaa"
         minSdk 30
         targetSdk 32
         versionCode 1
